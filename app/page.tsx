@@ -1,15 +1,30 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import SideNav from './components/SideNav';
+import TopBar from './components/TopBar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 export default function Home() {
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -31,15 +46,10 @@ export default function Home() {
   return (
     <>
       <SideNav />
-      <main className="relative">
-        <div className="fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-dark-400 via-dark-500 to-dark-500"></div>
-          <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-purple-900/5 to-transparent"></div>
-        </div>
-
+      <TopBar theme={theme} toggleTheme={toggleTheme} />
+      <main className="relative min-h-screen page-transition">
         <Hero />
         <About />
-        <Skills />
         <Experience />
         <Projects />
         <Contact />
