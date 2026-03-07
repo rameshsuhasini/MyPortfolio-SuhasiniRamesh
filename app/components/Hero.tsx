@@ -11,7 +11,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-purple-400 text-sm uppercase tracking-[0.3em] mb-8 font-medium"
+            style={{ color: 'var(--accent-primary)' }}
+            className="text-sm uppercase tracking-[0.3em] mb-8 font-medium"
           >
             Frontend Developer
           </motion.p>
@@ -20,41 +21,29 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-7xl md:text-8xl lg:text-9xl mb-12 leading-[0.95]"
+            className="text-7xl md:text-8xl lg:text-9xl mb-12 leading-[0.95] transition-colors duration-300"
           >
             Suhasini
             <br />
             <span className="gradient-text">Ramesh</span>
           </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-6 text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed"
-          >
-            <p>
-              9+ years building high-performance web applications with Angular and React.
-            </p>
-            <p>
-              Based in Berlin, focused on scalable, accessible interfaces.
-            </p>
-          </motion.div>
-
+          {/* Stats Section - 4 columns now */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-16 flex gap-8 text-sm uppercase tracking-wider"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm uppercase tracking-wider"
           >
             {[
               { label: 'Experience', value: '9+ Years' },
               { label: 'Projects', value: '15+' },
               { label: 'Location', value: 'Berlin' },
+              { label: 'German', value: 'B2' },
             ].map((item) => (
               <div key={item.label} className="space-y-2">
-                <p className="text-gray-600">{item.label}</p>
-                <p className="text-purple-400 font-medium">{item.value}</p>
+                <p className="transition-colors duration-300" style={{ color: 'var(--text-muted)' }}>{item.label}</p>
+                <p className="font-medium stat-value">{item.value}</p>
               </div>
             ))}
           </motion.div>

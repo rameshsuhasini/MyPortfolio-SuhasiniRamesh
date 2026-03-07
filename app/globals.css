@@ -2,14 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
 
 :root {
-  --purple-light: #b89dd4;
-  --purple-mid: #7d5ba6;
-  --purple-dark: #644886;
-  --dark-bg: #0a0a0c;
-  --darker-bg: #050506;
+  /* Deep Indigo - Premium Color Palette */
+  --indigo-light: #818CF8;
+  --indigo-mid: #4F46E5;
+  --indigo-dark: #4338CA;
+  --indigo-darker: #3730A3;
+}
+
+/* Dark theme (default) */
+html {
+  --bg-primary: #050506;
+  --bg-secondary: #0a0a0c;
+  --bg-tertiary: #16161a;
+  --bg-gradient-from: #0a0a0c;
+  --bg-gradient-to: #050506;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: rgba(79, 70, 229, 0.2);
+  --border-hover: rgba(79, 70, 229, 0.4);
+  --card-bg: rgba(79, 70, 229, 0.05);
+  --accent-primary: #4F46E5;
+  --accent-hover: #4338CA;
+  --accent-light: #818CF8;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-gradient-from: #ffffff;
+  --bg-gradient-to: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: rgba(79, 70, 229, 0.15);
+  --border-hover: rgba(79, 70, 229, 0.3);
+  --card-bg: rgba(79, 70, 229, 0.03);
+  --accent-primary: #4F46E5;
+  --accent-hover: #4338CA;
+  --accent-light: #6366F1;
 }
 
 * {
@@ -23,37 +61,42 @@ html {
 }
 
 body {
-  background: var(--darker-bg);
-  color: #e8e8e8;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
   font-family: 'IBM Plex Mono', monospace;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.01em;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hide scrollbar */
 ::-webkit-scrollbar {
   width: 0;
   background: transparent;
 }
 
-/* Typography */
+/* Typography - ALL headings use DM Serif Display */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'DM Serif Display', serif;
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
-/* Gradient text */
+/* ALL body text uses IBM Plex Mono */
+p, span, a, button, li, label {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
 .gradient-text {
-  background: linear-gradient(135deg, var(--purple-light), var(--purple-mid));
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Hover underline */
 .hover-underline {
   position: relative;
   display: inline-block;
@@ -66,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--purple-mid);
+  background: var(--accent-primary);
   transition: width 0.3s ease;
 }
 
@@ -74,13 +117,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* Selection */
 ::selection {
-  background: var(--purple-dark);
+  background: var(--accent-primary);
   color: white;
 }
 
-/* Project hover reveal */
 .project-details {
   max-height: 0;
   overflow: hidden;
@@ -92,14 +133,12 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 500px;
 }
 
-/* Focus states */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--purple-mid);
+  outline: 2px solid var(--accent-primary);
   outline-offset: 4px;
 }
 
-/* Reveal animation */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -109,4 +148,116 @@ button:focus-visible {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Premium Button Styles */
+.btn-primary {
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-primary);
+  color: var(--accent-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--accent-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.3);
+}
+
+/* Contact CTA Section Styling */
+.contact-cta {
+  background: var(--bg-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.contact-footer {
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light theme specific overrides */
+[data-theme="light"] .contact-cta {
+  background: #f8fafc;
+}
+
+[data-theme="light"] .contact-footer {
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Premium card styles */
+.premium-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.premium-card:hover {
+  border-color: var(--border-hover);
+  background: rgba(79, 70, 229, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.2);
+}
+
+/* Ensure proper contrast for all text */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3 {
+  color: #0f172a;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] span {
+  color: #334155;
+}
+
+/* Navigation and UI elements */
+.nav-dot {
+  background: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+  background: var(--accent-primary);
+  width: 48px;
+}
+
+.nav-dot:hover {
+  background: var(--accent-light);
+}
+
+/* Senior-level premium touches */
+.section-divider {
+  border-color: var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+.section-divider:hover {
+  border-color: var(--border-hover);
+}
+
+/* Stats and metrics */
+.stat-value {
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+
+/* Smooth page transitions */
+.page-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -9,7 +9,6 @@ export default function SideNav() {
   const sections = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'stack', label: 'Stack' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
@@ -56,12 +55,13 @@ export default function SideNav() {
               className="group flex items-center gap-4"
               aria-label={`Navigate to ${section.label}`}
             >
-              {/* Label - appears on hover */}
-              <span className="text-xs uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span 
+                className="text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ color: 'var(--text-tertiary)' }}
+              >
                 {section.label}
               </span>
               
-              {/* Indicator line */}
               <motion.div
                 className="relative flex items-center"
                 whileHover={{ scale: 1.2 }}
@@ -70,14 +70,18 @@ export default function SideNav() {
                 <div 
                   className={`h-px transition-all duration-300 ${
                     activeSection === section.id 
-                      ? 'w-12 bg-purple-500' 
-                      : 'w-8 bg-gray-600 group-hover:w-10 group-hover:bg-purple-400'
+                      ? 'w-12' 
+                      : 'w-8 group-hover:w-10'
                   }`}
+                  style={{ 
+                    background: activeSection === section.id ? 'var(--accent-primary)' : 'var(--text-muted)'
+                  }}
                 />
                 {activeSection === section.id && (
                   <motion.div
                     layoutId="activeDot"
-                    className="absolute right-0 w-2 h-2 bg-purple-500 rounded-full"
+                    className="absolute right-0 w-2 h-2 rounded-full"
+                    style={{ background: 'var(--accent-primary)' }}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   />
                 )}
