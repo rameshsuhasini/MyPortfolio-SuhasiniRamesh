@@ -29,15 +29,13 @@ suhasini-portfolio/
 │   │   ├── Navigation.tsx      # Top navigation bar
 │   │   ├── Hero.tsx            # Hero section
 │   │   ├── About.tsx           # About me section
-│   │   ├── Skills.tsx          # Tech stack showcase
 │   │   ├── Experience.tsx      # Work experience timeline
 │   │   ├── Projects.tsx        # Projects portfolio
 │   │   └── Contact.tsx         # Contact & footer
 │   ├── globals.css             # Global styles
 │   ├── layout.tsx              # Root layout
 │   └── page.tsx                # Main page
-├── public/
-│   └── images/                 # Image assets
+├── public/                     # Resume pdf
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # GitHub Actions workflow
@@ -76,7 +74,7 @@ suhasini-portfolio/
    - Visit: http://localhost:3000
 
 ### Check out the Website here.
- - Visit suhasini-portfolio.vercel.app
+ - Visit [suhasini-portfolio.vercel.app](https://myportfolio-six-xi-21.vercel.app/)
 
 
 ## 📊 Performance
