@@ -10,6 +10,13 @@ export default function Projects() {
 
   const projects = [
     {
+      name: 'AI Research Agent',
+      year: '2025',
+      tech: ['Claude API', 'Tavily Search API', 'Node.js', 'TypeScript', 'Angular'],
+      description: 'An autonomous AI agent that researches any topic by breaking it into multiple search queries, analyzing findings, and producing a structured report — all in real time.',
+      achievements: ['Multi-query research', 'Real-time analysis', 'Structured reports', 'API integration']
+    },
+    {
       name: 'AI Walking Assistant',
       year: '2024',
       tech: ['n8n', 'AI Integration', 'Workflow Automation'],
