@@ -1,89 +1,168 @@
-# 🎨 Portfolio Website - Project Summary
+# Suhasini Ramesh - Portfolio
 
-## 📋 Project Overview
+Professional portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
-I've created a modern, professional portfolio website for **Suhasini Ramesh** based on your resume and the reference website. The portfolio showcases your 9+ years of frontend development experience with a beautiful, animated design.
+## Features
 
-### 🎨 Design Features
-- **Modern Aesthetic**: Clean, professional design inspired by the reference
-- **Smooth Animations**: Framer Motion for silky-smooth interactions
-- **Responsive Design**: Perfect on desktop, tablet, and mobile
-- **Glassmorphism**: Modern glass-effect UI elements
-- **Gradient Accents**: Eye-catching color gradients (cyan & pink)
-- **Interactive Navigation**: Sticky navigation with smooth scrolling
-- **Performance Optimized**: Built with Next.js for blazing-fast performance
+- Editorial typography-first design
+- Muted purple color scheme
+- Side navigation with smooth scrolling
+- Local image storage (no CDN dependencies)
+- Fully responsive
+- Production-ready
 
-### 🛠️ Technical Stack
-- **Framework**: Next.js 14 (React framework)
-- **Language**: TypeScript (type-safe development)
-- **Styling**: Tailwind CSS (utility-first CSS)
-- **Animations**: Framer Motion (smooth animations)
-- **Fonts**: Space Grotesk (display) + Inter (body)
+## Tech Stack
 
-## 📁 Project Structure
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Fonts**: DM Serif Display + IBM Plex Mono
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone repository
+git clone <your-repo-url>
+cd suhasini-ramesh-portfolio
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000)
+
+### Build for Production
+
+```bash
+npm run build
+npm run start
+```
+
+## Project Structure
 
 ```
-suhasini-portfolio/
+suhasini-ramesh-portfolio/
 ├── app/
 │   ├── components/
-│   │   ├── Navigation.tsx      # Top navigation bar
-│   │   ├── Hero.tsx            # Hero section
-│   │   ├── About.tsx           # About me section
-│   │   ├── Experience.tsx      # Work experience timeline
-│   │   ├── Projects.tsx        # Projects portfolio
-│   │   └── Contact.tsx         # Contact & footer
-│   ├── globals.css             # Global styles
-│   ├── layout.tsx              # Root layout
-│   └── page.tsx                # Main page
-├── public/                     # Resume pdf
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Actions workflow
-├── next.config.mjs             # Next.js configuration
-├── tailwind.config.js          # Tailwind CSS configuration
-├── tsconfig.json               # TypeScript configuration
-├── package.json                # Dependencies
-├── .gitignore                  # Git ignore rules
-├── README.md                   # Main documentation
-├── GETTING_STARTED.md          # Quick start guide
-├── DEPLOYMENT.md               # Deployment instructions
-├── setup.sh                    # Setup script
-└── LICENSE                     # MIT License
+│   │   ├── SideNav.tsx        # Side navigation
+│   │   ├── Hero.tsx           # Landing section
+│   │   ├── About.tsx          # About section
+│   │   ├── Skills.tsx         # Tech stack
+│   │   ├── Experience.tsx     # Work history
+│   │   ├── Projects.tsx       # Project showcase
+│   │   └── Contact.tsx        # Contact info
+│   ├── globals.css            # Global styles
+│   ├── layout.tsx             # Root layout
+│   └── page.tsx               # Main page
+├── public/
+│   └── logos/                 # Tech logos (local)
+├── next.config.mjs
+├── tailwind.config.js
+├── tsconfig.json
+└── package.json
 ```
 
-## 🚀 How to Use
+## Adding Tech Logos
 
-### Quick Start (3 Steps)
+1. Download logos as SVG/PNG
+2. Place in `public/logos/`
+3. Update paths in `Skills.tsx`
 
-1. **Navigate to the project folder**
-   ```bash
-   cd suhasini-portfolio
-   ```
+Example:
+```typescript
+{ name: 'React', icon: '/logos/react.svg' }
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+## Customization
 
-3. **Run development server**
-   ```bash
-   npm run dev
-   ```
+### Update Personal Info
 
-4. **Open browser**
-   - Visit: http://localhost:3000
+Edit these files:
+- `app/components/Hero.tsx` - Name, title, intro
+- `app/components/About.tsx` - Bio, education
+- `app/components/Experience.tsx` - Work history
+- `app/components/Projects.tsx` - Project list
+- `app/components/Contact.tsx` - Contact details
 
-### Check out the Website here.
- - Visit [suhasini-portfolio.vercel.app](https://myportfolio-six-xi-21.vercel.app/)
+### Change Colors
 
+Edit `tailwind.config.js`:
+```javascript
+purple: {
+  400: '#b89dd4',  // Light
+  500: '#9975c0',  // Mid
+  600: '#7d5ba6',  // Main
+}
+```
 
-## 📊 Performance
+## Deployment
 
-- **Lighthouse Score**: 90+ (expected)
-- **First Contentful Paint**: < 1s
-- **Time to Interactive**: < 2s
-- **SEO Optimized**: Yes
-- **Mobile Friendly**: Yes
-- **Accessibility**: WCAG compliant
+### Vercel (Recommended)
 
-**Created with ❤️ by Suhasini Ramesh**
+```bash
+# Push to GitHub
+git push
+
+# Import on Vercel
+# vercel.com → Import → Deploy
+```
+
+### GitHub Pages
+
+```bash
+npm run build
+# Deploy /out directory
+```
+
+### Other Platforms
+
+Build output is in `/out` directory after `npm run build`.
+
+## Design Philosophy
+
+- **Typography First**: Content-driven design
+- **No Cards**: Clean borders and spacing
+- **Minimal Animations**: Subtle, professional
+- **Generous Whitespace**: Breathing room
+- **Professional**: No playful UI elements
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Performance
+
+- Lighthouse Score: 90+
+- No external image dependencies
+- Optimized animations
+- Production build minified
+
+## License
+
+MIT License - See LICENSE file
+
+## Contact
+
+**Suhasini Ramesh**
+- Email: suhasiniramesh1911@gmail.com
+- Location: Berlin, Germany
+- GitHub: rameshsuhasini
+- LinkedIn: suhasini-ramesh-be-mba
+
+---
+
+Built with professional standards and attention to detail.
