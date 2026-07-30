@@ -9,6 +9,7 @@ export default function SideNav() {
   const sections = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'tech-stack', label: 'Tech Stack' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
