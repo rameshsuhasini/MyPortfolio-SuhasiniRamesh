@@ -3,8 +3,10 @@
 import { useEffect, useState } from 'react';
 import SideNav from './components/SideNav';
 import TopBar from './components/TopBar';
+import TechCanvasBackground from './components/TechCanvasBackground';
 import Hero from './components/Hero';
 import About from './components/About';
+import TechStack from './components/TechStack';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -45,11 +47,13 @@ export default function Home() {
 
   return (
     <>
+      <TechCanvasBackground />
       <SideNav />
       <TopBar theme={theme} toggleTheme={toggleTheme} />
       <main className="relative min-h-screen page-transition">
         <Hero />
         <About />
+        <TechStack />
         <Experience />
         <Projects />
         <Contact />

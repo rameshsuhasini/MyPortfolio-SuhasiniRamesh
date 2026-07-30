@@ -8,9 +8,9 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const experiences = [
-    { role: 'Senior Software Engineer', company: 'Farmly Software', location: 'Remote', period: '2024' },
+    { role: 'Senior Software Engineer', company: 'Farmly Software', location: 'Remote', period: 'Mar 2024 — Dec 2024' },
     { role: 'Senior Software Engineer', company: 'Mitel Communications', location: 'Bengaluru', period: '2021 — 2024' },
-    { role: 'Senior Technical Staff', company: 'NEC India', location: 'Bengaluru', period: '2018 — 2021' },
+    { role: 'Senior Member Technical Staff', company: 'NEC India', location: 'Bengaluru', period: '2018 — 2021' },
     { role: 'Software Engineer', company: 'Tech Mahindra', location: 'Bengaluru', period: '2015 — 2018' }
   ];
 

@@ -5,11 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Deep Indigo - Premium Color Palette */
-  --indigo-light: #818CF8;
-  --indigo-mid: #4F46E5;
-  --indigo-dark: #4338CA;
-  --indigo-darker: #3730A3;
+  /* Electric Teal/Cyan - Premium Color Palette */
+  --teal-light: #5EEAD4;
+  --teal-mid: #14B8A6;
+  --teal-dark: #0D9488;
+  --teal-darker: #0F766E;
 }
 
 /* Dark theme (default) */
@@ -23,12 +23,12 @@ html {
   --text-secondary: #cbd5e1;
   --text-tertiary: #94a3b8;
   --text-muted: #64748b;
-  --border-color: rgba(79, 70, 229, 0.2);
-  --border-hover: rgba(79, 70, 229, 0.4);
-  --card-bg: rgba(79, 70, 229, 0.05);
-  --accent-primary: #4F46E5;
-  --accent-hover: #4338CA;
-  --accent-light: #818CF8;
+  --border-color: rgba(20, 184, 166, 0.2);
+  --border-hover: rgba(20, 184, 166, 0.4);
+  --card-bg: rgba(20, 184, 166, 0.05);
+  --accent-primary: #14B8A6;
+  --accent-hover: #0D9488;
+  --accent-light: #5EEAD4;
 }
 
 /* Light theme */
@@ -42,12 +42,12 @@ html {
   --text-secondary: #334155;
   --text-tertiary: #64748b;
   --text-muted: #94a3b8;
-  --border-color: rgba(79, 70, 229, 0.15);
-  --border-hover: rgba(79, 70, 229, 0.3);
-  --card-bg: rgba(79, 70, 229, 0.03);
-  --accent-primary: #4F46E5;
-  --accent-hover: #4338CA;
-  --accent-light: #6366F1;
+  --border-color: rgba(13, 148, 136, 0.15);
+  --border-hover: rgba(13, 148, 136, 0.3);
+  --card-bg: rgba(13, 148, 136, 0.03);
+  --accent-primary: #0D9488;
+  --accent-hover: #0F766E;
+  --accent-light: #14B8A6;
 }
 
 * {
@@ -161,7 +161,7 @@ button:focus-visible {
 .btn-primary:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(20, 184, 166, 0.3);
 }
 
 .btn-outline {
@@ -175,7 +175,7 @@ button:focus-visible {
   background: var(--accent-primary);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(20, 184, 166, 0.3);
 }
 
 /* Contact CTA Section Styling */
@@ -209,9 +209,9 @@ button:focus-visible {
 
 .premium-card:hover {
   border-color: var(--border-hover);
-  background: rgba(79, 70, 229, 0.08);
+  background: rgba(20, 184, 166, 0.08);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.2);
 }
 
 /* Ensure proper contrast for all text */
@@ -261,3 +261,18 @@ button:focus-visible {
 .page-transition {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Tech stack marquee */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
